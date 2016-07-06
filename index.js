@@ -96,7 +96,7 @@ TasteKitClient.prototype = {
 
     var options = {
       method: 'GET',
-      uri: this.baseUrl + '/recommendations'
+      uri: this.baseUrl + '/recommendations',
       qs: {
         user: user,
         token: this.apiKey
