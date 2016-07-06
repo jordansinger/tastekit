@@ -1,0 +1,14 @@
+{
+  "name": "tastekit",
+  "description": "Simple module to use the Taste Kit API.",
+  "homepage": "https://github.com/mdcarter/tastekit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mdcarter/tastekit.git"
+  },
+  "devDependencies": {
+    "request-promise": "^3.0.0"
+  }
+}
