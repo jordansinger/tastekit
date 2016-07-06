@@ -29,7 +29,7 @@ TasteKitClient.prototype = {
      * Add a like on an item from a user
      * @method like
      * @param  {string} user - the user identifier
-     * @param  {string} user - the item identifier
+     * @param  {string} item - the item identifier
      * @return {Promise} Promise object
      */
 
@@ -39,7 +39,10 @@ TasteKitClient.prototype = {
 
     var options = {
       method: 'POST',
-      uri: this.baseUrl + '/likes/like?token=' + this.apiKey,
+      uri: this.baseUrl + '/likes/like',
+      qs: {
+        token: this.apiKey
+      },
       body: {
         user: user,
         item: item
@@ -55,7 +58,7 @@ TasteKitClient.prototype = {
      * Add a dislike on an item from a user
      * @method dislike
      * @param  {string} user - the user identifier
-     * @param  {string} user - the item identifier
+     * @param  {string} item - the item identifier
      * @return {Promise} Promise object
      */
 
@@ -65,7 +68,10 @@ TasteKitClient.prototype = {
 
     var options = {
       method: 'POST',
-      uri: this.baseUrl + '/likes/dislike?token=' + this.apiKey,
+      uri: this.baseUrl + '/likes/dislike',
+      qs: {
+        token: this.apiKey
+      },
       body: {
         user: user,
         item: item
@@ -75,6 +81,84 @@ TasteKitClient.prototype = {
 
     return request(options);
   },
+
+  recommendations: function(user) {
+    /**
+     * Get recommendations for a user
+     * @method dislike
+     * @param  {string} user - the user identifier
+     * @return {Promise} Promise object
+     */
+
+    if (!user) {
+      throw new Error('You need to pass a user identifier.');
+    }
+
+    var options = {
+      method: 'GET',
+      uri: this.baseUrl + '/recommendations'
+      qs: {
+        user: user,
+        token: this.apiKey
+      }
+    };
+
+    return request(options);
+  },
+
+  deleteItem: function(item) {
+    /**
+     * Remove an item
+     * @method deleteItem
+     * @param  {string} user - the item identifier
+     * @return {Promise} Promise object
+     */
+
+    if (!item) {
+      throw new Error('You need to pass a item identifier.');
+    }
+
+    var options = {
+      method: 'DELETE',
+      uri: this.baseUrl + '/items',
+      qs: {
+        token: this.apiKey
+      },
+      body: {
+        item: item
+      },
+      json: true
+    };
+
+    return request(options);
+  },
+
+  deleteUser: function(user) {
+    /**
+     * Remove an user
+     * @method deleteUser
+     * @param  {string} user - the user identifier
+     * @return {Promise} Promise object
+     */
+
+    if (!user) {
+      throw new Error('You need to pass a user identifier.');
+    }
+
+    var options = {
+      method: 'DELETE',
+      uri: this.baseUrl + '/items',
+      qs: {
+        token: this.apiKey
+      },
+      body: {
+        user: user
+      },
+      json: true
+    };
+
+    return request(options);
+  }
 
 };
 
