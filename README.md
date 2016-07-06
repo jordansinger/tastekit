@@ -24,7 +24,7 @@ new TasteKit('YOURTOKEN').like('USERIDENTIFIER', 'ITEMIDENTIFIER').then(function
 });
 ```
 
-### All method
+### All methods
 
 All the current methods of the API are implemented this way :
 
