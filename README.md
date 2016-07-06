@@ -1,6 +1,8 @@
 Taste Kit
 ===========
 
+[![Dependency Status](https://david-dm.org/mdcarter/tastekit.svg)](https://david-dm.org/mdcarter/tastekit)
+
 This is a simple wrapper for [TasteKit](https://http://www.taste-kit.com/)
 
 ### Installation
