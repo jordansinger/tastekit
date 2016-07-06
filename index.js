@@ -82,7 +82,7 @@ TasteKitClient.prototype = {
     return request(options);
   },
 
-  recommendations: function(user) {
+  getRecommendations: function(user) {
     /**
      * Get recommendations for a user
      * @method dislike

@@ -2,7 +2,11 @@
   "name": "tastekit",
   "description": "Simple module to use the Taste Kit API.",
   "homepage": "https://github.com/mdcarter/tastekit",
-  "version": "1.0.0",
+  "author": {
+    "name": "Maxime Dehaye",
+    "emain": "maxime.dehaye@gmail.com"
+  },
+  "version": "0.1.0",
   "main": "index.js",
   "repository": {
     "type": "git",
